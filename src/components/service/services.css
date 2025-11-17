@@ -1,0 +1,67 @@
+.services-hero {
+  padding-top: 5rem;
+}
+
+.stack-card {
+  border: 1px solid var(--tek-outline);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.stack-chip {
+  border: 1px solid var(--tek-outline);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--tek-gray);
+}
+
+.offering-card {
+  border: 1px solid var(--tek-outline);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+.offering-card ul li {
+  padding: 0.2rem 0;
+  color: var(--tek-gray);
+  letter-spacing: 0.05em;
+}
+
+.cta-section {
+  padding-bottom: 6rem;
+}
+
+.cta-box {
+  border: 1px solid var(--tek-outline);
+  border-radius: 1.75rem;
+  padding: 3rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(120deg, #050505, #111111);
+  color: var(--tek-white);
+}
+
+.cta-box p,
+.cta-box h2,
+.cta-box .eyebrow {
+  color: var(--tek-white);
+}
+
+.cta-box .btn-outline-light {
+  color: var(--tek-white);
+  border-color: var(--tek-white);
+}
+
+.cta-box .btn-outline-light:hover {
+  background: var(--tek-white);
+  color: var(--tek-black);
+}

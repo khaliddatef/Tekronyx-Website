@@ -1,1 +1,55 @@
-<p>services works!</p>
+<section class="services-hero" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7">
+        <p class="eyebrow text-uppercase mb-3">Services</p>
+        <h1 class="display-5 fw-bold mb-4">White-glove partners for building the future.</h1>
+        <p class="lead text-secondary mb-4">
+          Tekronyx pods blend strategy, design, engineering and AI fluency. Everything is engineered for clarity —
+          from the first discovery sprint to the obs dashboards that keep your launches humming.
+        </p>
+        <a routerLink="/contact" class="btn btn-tek">Launch an engagement</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="stack-card">
+          <span class="small text-uppercase text-secondary d-block mb-3">Stacks we obsess over</span>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="stack-chip" *ngFor="let stack of stacks">{{ stack }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offerings-section" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6" *ngFor="let offering of offerings">
+        <article class="offering-card h-100">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <h4 class="mb-0">{{ offering.title }}</h4>
+            <span class="badge text-bg-light text-dark">Tekronyx pod</span>
+          </div>
+          <p class="text-secondary">{{ offering.description }}</p>
+          <ul class="list-unstyled m-0">
+            <li *ngFor="let item of offering.items">• {{ item }}</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" data-aos="fade-up">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <p class="eyebrow mb-2">Need momentum?</p>
+        <h2 class="h1 mb-3">Let’s design a pod around your mission.</h2>
+        <p class="text-secondary m-0">Two-week onboarding · Joint OKRs · Transparent burndown</p>
+      </div>
+      <a routerLink="/contact" class="btn btn-outline-light rounded-pill px-4">Book chemistry call</a>
+    </div>
+  </div>
+</section>

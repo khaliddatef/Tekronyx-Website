@@ -1,0 +1,57 @@
+.about-hero {
+  padding-top: 5rem;
+}
+
+.badge-pill {
+  display: inline-flex;
+  border: 1px solid var(--tek-outline);
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--tek-gray);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.profile-card {
+  border: 1px solid var(--tek-outline);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  min-height: 160px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--tek-gray);
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.value-card,
+.milestone-card,
+.leader-card {
+  border: 1px solid var(--tek-outline);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  height: 100%;
+}
+
+.milestone-card .year {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--tek-gray);
+}
+
+.leader-card h5 {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
