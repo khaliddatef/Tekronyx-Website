@@ -1,0 +1,63 @@
+<div class="app-shell">
+  <header class="app-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-semibold fs-4 tracking-wide" routerLink="/">Tekronyx</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                 class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a routerLink="/contact" class="btn btn-tek">Start a project</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <router-outlet />
+  </main>
+
+  <footer class="app-footer">
+    <div class="container py-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-4">
+          <h3 class="fw-bold mb-3">Tekronyx</h3>
+          <p class="text-secondary mb-0">Precision-built digital products and AI solutions crafted with intention.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-2 small text-uppercase text-secondary">
+            <span>HQ · Cairo / Dubai / Remote</span>
+            <span>hello@tekronyx.com</span>
+            <span>+20 127 555 9012</span>
+          </div>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <p class="text-secondary mb-2 small">© {{ title() }} · {{ today | date:'yyyy' }}</p>
+          <div class="d-flex justify-content-lg-end gap-3">
+            <a class="link-light text-decoration-none small" href="#">LinkedIn</a>
+            <a class="link-light text-decoration-none small" href="#">Behance</a>
+            <a class="link-light text-decoration-none small" href="#">Dribbble</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,62 @@
+::ng-deep body {
+  background-color: var(--tek-white);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--tek-outline);
+}
+
+.navbar {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.navbar-brand {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--tek-gray);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--tek-black);
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 3rem;
+}
+
+.app-footer {
+  border-top: 1px solid var(--tek-outline);
+  background: var(--tek-black);
+  color: var(--tek-white);
+}
+
+.app-footer p,
+.app-footer span,
+.app-footer a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tracking-wide {
+  letter-spacing: 0.12em;
+}
