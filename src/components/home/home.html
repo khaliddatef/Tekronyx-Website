@@ -1,74 +1,25 @@
-<section class="hero-immersive text-center text-white" data-aos="fade-up">
-  <div class="hero-overlay"></div>
-  <div class="container hero-copy">
-    <p class="eyebrow text-uppercase mb-3 text-white-50">Tekronyx · Purpose-built technology studio</p>
-    <h1 class="display-3 fw-bold mb-4">We choreograph bold experiences and intelligent systems.</h1>
-    <p class="lead mb-4 col-lg-8 mx-auto">
-      From Cairo to Dubai, Tekronyx teams blend strategic clarity, crafted design and automation-first engineering.
-    </p>
-    <div class="d-flex justify-content-center flex-wrap gap-3">
-      <a routerLink="/services" class="btn btn-tek">Explore services</a>
-      <a routerLink="/contact" class="btn btn-outline-light rounded-pill px-4">Book a call</a>
-    </div>
-  </div>
-</section>
-
-<section class="metrics-section" data-aos="fade-up">
-  <div class="container">
-    <div class="row g-4 justify-content-center">
-      <div class="col-6 col-md-3 col-lg-2" *ngFor="let metric of metrics">
-        <div class="metric-tile text-center">
-          <span class="metric-value">{{ metric.value }}</span>
-          <span class="metric-label text-uppercase">{{ metric.label }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="capabilities-section" data-aos="fade-up">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow mb-2">Capabilities</p>
-      <div class="d-flex justify-content-between gap-3 flex-wrap">
-        <h2 class="h1 fw-semibold">From signal to scale.</h2>
-        <p class="text-secondary col-lg-5">
-          We fuse strategic clarity, experience design and full-stack engineering so every Tekronyx build is as
-          elegant as it is high-performing.
-        </p>
-      </div>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-6" *ngFor="let capability of capabilities">
-        <article class="capability-card">
-          <span class="badge rounded-pill text-dark bg-light-subtle">{{ capability.tag }}</span>
-          <h5 class="mt-3 mb-2">{{ capability.title }}</h5>
-          <p class="text-secondary mb-0">{{ capability.description }}</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="process-section" data-aos="fade-up">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-4">
-        <p class="eyebrow mb-2">Engagement model</p>
-        <h2 class="h1">Pods built for velocity.</h2>
-        <p class="text-secondary">
-          Strategy leads, product thinkers and engineers operate as one Tekronyx pod, embedding with your teams to
-          move from opportunity to shipped reality in weeks.
-        </p>
-      </div>
-      <div class="col-lg-8">
-        <div class="timeline">
-          <div class="timeline-step" *ngFor="let step of process; let i = index">
-            <div class="timeline-index">{{ i + 1 }}</div>
-            <div>
-              <h5>{{ step.title }}</h5>
-              <p class="text-secondary mb-0">{{ step.detail }}</p>
-            </div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-background">
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+    
+    <!-- Hero Content Centered -->
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-text-center">
+          <span class="company-name">TEKRONYX TECH LLC</span>
+          <h1 class="hero-title">
+            AI Enabler for 
+            <span class="gradient-text">Egypt & MENA</span>
+          </h1>
+          <p class="hero-description">
+            Empowering institutions with AI & digital sovereignty through cutting-edge solutions 
+            and secure infrastructure.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary">Explore Solutions</button>
+            <button class="btn btn-secondary">Contact Us</button>
           </div>
         </div>
       </div>
@@ -76,32 +27,104 @@
   </div>
 </section>
 
-<section class="case-studies" data-aos="fade-up">
+  <!-- Enhanced Vision & Mission Section -->
+    <section class="vision-mission-section">
+        <div class="floating-element floating-element-1"></div>
+        <div class="floating-element floating-element-2"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Vision & Mission</h2>
+                <p>Driving innovation and digital transformation across the MENA region</p>
+            </div>
+            
+            <div class="vision-mission-grid">
+                <div class="vision-card">
+                    <div class="icon-wrapper">🎯</div>
+                    <h3>Our Vision</h3>
+                    <p>Position Egypt as a regional hub for AI & digital sovereignty, driving technological innovation across MENA.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="icon-wrapper">🚀</div>
+                    <h3>Our Mission</h3>
+                    <p>Enable institutions to harness AI through cutting-edge applications and secure digital infrastructure solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Core Pillars Section -->
+<section class="pillars-section">
   <div class="container">
-    <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
-      <div>
-        <p class="eyebrow mb-1">Proof</p>
-        <h2 class="h1">Selected drops.</h2>
-      </div>
-      <a routerLink="/contact" class="link-light small text-uppercase">Request the full deck →</a>
+    <div class="section-header">
+      <h2>Core Pillars of Excellence</h2>
+      <p>Building the future of AI infrastructure and applications</p>
     </div>
-    <div class="row g-4">
-      <div class="col-lg-4" *ngFor="let story of caseStudies">
-        <article class="case-card h-100">
-          <p class="text-secondary text-uppercase small mb-2">{{ story.client }}</p>
-          <h5>{{ story.headline }}</h5>
-          <p class="text-secondary mb-0">{{ story.detail }}</p>
-        </article>
+    <div class="pillars-grid">
+      <div class="pillar-card" *ngFor="let pillar of pillars">
+        <div class="pillar-icon">{{ pillar.icon }}</div>
+        <h3>{{ pillar.title }}</h3>
+        <ul class="pillar-items">
+          <li *ngFor="let item of pillar.items">{{ item }}</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="partners-section" data-aos="fade-up">
-  <div class="container text-center">
-    <p class="eyebrow mb-3">Trusted Collaborators</p>
-    <div class="d-flex flex-wrap justify-content-center gap-4">
-      <span class="partner" *ngFor="let partner of partners">{{ partner }}</span>
+<!-- Key Projects Section -->
+<section class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Key Projects & Impact</h2>
+      <p>Transforming industries with AI-powered solutions</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <div class="project-image">
+          <!-- Replace placeholder with actual image -->
+          <img [src]="project.image" [alt]="project.title" class="project-img">
+          <div class="image-overlay"></div>
+        </div>
+        <div class="project-content">
+          <h3>{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-impact">
+            <strong>Impact:</strong> {{ project.impact }}
+          </div>
+          <button class="btn btn-outline">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Competitive Edge Section -->
+<section class="advantages-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Competitive Edge</h2>
+      <p>Why leading institutions choose TEKRONYX</p>
+    </div>
+    <div class="advantages-grid">
+      <div class="advantage-card" *ngFor="let advantage of advantages">
+        <div class="advantage-icon">{{ advantage.icon }}</div>
+        <h4>{{ advantage.title }}</h4>
+        <p>{{ advantage.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Institution with AI?</h2>
+      <p>Join the digital revolution with TEKRONYX - Your partner in AI innovation and digital sovereignty.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary">Start Your AI Journey</button>
+        <button class="btn btn-secondary">Schedule Consultation</button>
+      </div>
     </div>
   </div>
 </section>

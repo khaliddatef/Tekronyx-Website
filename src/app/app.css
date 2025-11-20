@@ -1,48 +1,104 @@
 ::ng-deep body {
   background-color: var(--tek-white);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .app-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
+/* Fixed Navbar with Transparent Black Background */
 .app-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1030;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--tek-outline);
+  background: rgba(0, 0, 0, 0.3); /* Transparent black background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: transparent !important;
 }
 
 .navbar-brand {
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-link {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.85rem;
-  color: var(--tek-gray);
-  transition: color 0.2s ease, opacity 0.2s ease;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border-radius: 6px;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--tek-black);
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1);
 }
 
+/* Navbar Toggler for Mobile */
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Start Project Button */
+.btn-tek {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+.btn-tek:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Main Content - Remove padding since navbar is fixed */
 .main-content {
   flex: 1;
-  padding-top: 3rem;
+  padding-top: 0; /* Remove padding since navbar is fixed */
+}
+
+/* Hero Section Specific Adjustments */
+.hero-section {
+  margin-top: 0;
+  padding-top: 80px; /* Add padding to push content below fixed navbar */
 }
 
 .app-footer {
@@ -59,4 +115,47 @@
 
 .tracking-wide {
   letter-spacing: 0.12em;
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.8); /* Darker background for mobile menu */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 0 0 10px 10px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .nav-link {
+    margin: 0.25rem 0;
+    text-align: center;
+  }
+  
+  .btn-tek {
+    margin-top: 0.5rem;
+    text-align: center;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .hero-section {
+    padding-top: 70px; /* Adjust for smaller navbar on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+  
+  .hero-section {
+    padding-top: 65px;
+  }
 }

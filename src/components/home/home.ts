@@ -1,75 +1,77 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterLink],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrls: ['./home.css']
 })
 export class Home {
-  protected readonly metrics = [
-    { label: 'Products deployed', value: '120+' },
-    { label: 'Automation hours saved', value: '48k' },
-    { label: 'Active partners', value: '32' },
-  ];
-
-  protected readonly capabilities = [
+  // Core pillars data
+  pillars = [
     {
-      title: 'Intelligent Platforms',
-      description: 'Modular cloud-native platforms that connect product, data and operations.',
-      tag: 'Platforms'
+      title: 'AI-Native Applications',
+      items: [
+        'Citizen & Community Engagement Platforms',
+        'AI-Powered Crime Prevention & Prediction',
+        'Intelligent Decision Dashboards',
+        'Predictive Risk & Incident Management'
+      ],
+      icon: '🤖'
     },
     {
-      title: 'AI & Automation',
-      description: 'LLM-powered copilots, data pipelines and predictive intelligence tuned to your business.',
-      tag: 'AI'
-    },
-    {
-      title: 'Experience Design',
-      description: 'Interactive prototypes, motion systems and design languages infused with purpose.',
-      tag: 'Design'
-    },
-    {
-      title: 'Innovation Pods',
-      description: 'Dedicated cross-functional pods that move from discovery to launch in weeks.',
-      tag: 'Pods'
-    },
-  ];
-
-  protected readonly process = [
-    {
-      title: 'Discover & Align',
-      detail: 'Immersive workshops surface opportunities and rapidly align leadership on the right bets.'
-    },
-    {
-      title: 'Architect & Prototype',
-      detail: 'Systems, journeys and prototypes shaped together with stakeholders & pilot users.'
-    },
-    {
-      title: 'Engineer & Launch',
-      detail: 'Robust engineering, observability-first deployments and measurable launches in market.'
+      title: 'Digital Infrastructure',
+      items: [
+        'Hyperscale & Sovereign Data Centres',
+        'National Digital Sovereignty Network',
+        'Foreign Direct Investment in ICT',
+        'High-Speed Fiber & Cloud Backbone'
+      ],
+      icon: '🏗️'
     }
   ];
 
-  protected readonly caseStudies = [
+
+// Key projects data
+projects = [
+  {
+    title: 'MOI AI-Powered Public Security Platform',
+    description: 'Predictive policing, real-time dashboards, secure data archiving, citizen engagement apps',
+    impact: 'Faster safety operations, data sovereignty, nationwide optimization',
+    //image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=80'
+    image:'./assets/images/futuristic-technology-concept.jpg'
+  },
+  {
+    title: 'Digital Sovereignty Network',
+    description: 'Nationwide secure connectivity system with AI-native dashboards & analytics',
+    impact: 'Enhanced security, reduced foreign hosting dependency',
+    //image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&auto=format&fit=crop&q=80'
+    image:'./assets/images/octtttt_6.jpg'
+    
+  }
+];
+  // Competitive advantages
+  advantages = [
     {
-      client: 'Nordic Mobility',
-      headline: 'Orchestrated a multimodal fleet brain',
-      detail: 'Unified operations, predictive maintenance and dispatch UI that cut downtime by 37%.'
+      title: 'AI-Native Solutions',
+      description: 'End-to-end AI integration from ground up',
+      icon: '⚡'
     },
     {
-      client: 'Citrine Labs',
-      headline: 'AI copilots inside complex research flows',
-      detail: 'Bespoke LLM agents accelerated documentation and lab analysis across 18 teams.'
+      title: 'Full Stack Expertise',
+      description: 'Applications + Infrastructure combined excellence',
+      icon: '🔧'
     },
     {
-      client: 'Venturo Bank',
-      headline: 'Conversational wealth desk',
-      detail: 'Human + AI service desk with explainable models exceeded CSAT targets in 6 weeks.'
+      title: 'Local & Global',
+      description: 'Local presence with international partnerships',
+      icon: '🌍'
+    },
+    {
+      title: 'Trusted Partner',
+      description: 'Preferred by ministries & telecom operators',
+      icon: '🤝'
     }
   ];
-
-  protected readonly partners = ['Siemens', 'Citrine', 'Venturo', 'Nordic', 'PulseGrid'];
 }
