@@ -1,6 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  features?: string[];
+}
+
+interface Project {
+  icon: string;
+  title: string;
+  modules?: string[];
+  impact: string;
+}
 
 @Component({
   selector: 'app-services',
@@ -8,31 +22,160 @@ import { RouterLink } from '@angular/router';
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
-export class Services {
-  protected readonly offerings = [
+export class Services implements OnInit {
+  
+  particles: number[] = Array(50).fill(0);
+  
+  aiApplications: Service[] = [
     {
-      title: 'Strategy & Discovery',
-      description: 'Vision sprints, capability mapping, opportunity prioritisation and product roadmap definition.',
-      items: ['CX / Service blueprints', 'Data readiness audit', 'North star prototypes']
+      icon: '📊',
+      title: 'AI-Powered Decision Dashboards',
+      description: 'Real-time data and analytics that support decision-making across ministries and authorities.',
+      features: [
+        'Real-time data visualization',
+        'Predictive analytics',
+        'Cross-ministry integration',
+        'Customizable dashboards'
+      ]
     },
     {
-      title: 'Design & Experience',
-      description: 'Design systems, interactions, motion and narrative design bridging physical + digital worlds.',
-      items: ['Product & brand systems', 'Prototyping & testing', 'Content & storytelling']
+      icon: '🏛️',
+      title: 'Smart Government Services',
+      description: 'AI-driven apps and platforms that simplify access to permits, licenses, and public services.',
+      features: [
+        'Automated permit processing',
+        'Intelligent license management',
+        'Citizen service optimization',
+        '24/7 virtual assistance'
+      ]
     },
     {
-      title: 'Engineering',
-      description: 'Full-stack squads delivering secure, observable and scalable platforms.',
-      items: ['Cloud-native backends', 'Web & mobile apps', 'DevOps & SRE']
+      icon: '💬',
+      title: 'Citizen Engagement Platforms',
+      description: 'Feedback, participation, surveys, and communication channels between citizens and government.',
+      features: [
+        'Multi-channel engagement',
+        'Sentiment analysis',
+        'Automated response systems',
+        'Community feedback loops'
+      ]
     },
     {
-      title: 'AI & Automation',
-      description: 'LLM integration, workflow automation and human-in-the-loop interfaces.',
-      items: ['Copilots & agents', 'Data pipelines', 'Intelligent automation']
+      icon: '🔮',
+      title: 'Predictive Policy & Planning',
+      description: 'AI models that forecast national needs in health, infrastructure, energy, transport, and education.',
+      features: [
+        'Healthcare demand forecasting',
+        'Infrastructure planning',
+        'Energy consumption prediction',
+        'Transportation optimization',
+        'Educational resource allocation'
+      ]
     },
+    {
+      icon: '🛡️',
+      title: 'Risk & Resource Management',
+      description: 'AI systems for crisis management and efficient allocation of national resources.',
+      features: [
+        'Real-time risk assessment',
+        'Resource optimization algorithms',
+        'Crisis prediction models',
+        'Emergency response coordination'
+      ]
+    }
   ];
 
-  protected readonly stacks = [
-    'Angular', 'Next.js', 'Node.js', 'Python', 'LangChain', 'AWS', 'GCP', 'Figma'
+  digitalInfrastructure: Service[] = [
+    {
+      icon: '🏢',
+      title: 'Hyperscale & Sovereign Data Centers',
+      description: 'Hosting national systems inside Egypt with global partner collaboration.'
+    },
+    {
+      icon: '🌐',
+      title: 'National Digital Sovereignty Network',
+      description: 'A secure backbone connecting ministries, agencies, HQs, and critical sites.'
+    },
+    {
+      icon: '🤝',
+      title: 'International Partnerships & FDI in ICT',
+      description: 'Attracting foreign investment and international technology expertise.'
+    },
+    {
+      icon: '⚡',
+      title: 'Fiber & Cloud Backbone',
+      description: 'Future-proof infrastructure delivering high-speed connectivity and cloud capabilities.'
+    }
   ];
+
+  featuredProjects: Project[] = [
+    {
+      icon: '🛡️',
+      title: 'MOI AI-Powered Public Security Platform',
+      modules: [
+        'Predictive policing',
+        'Data archiving',
+        'Real-time dashboards',
+        'Citizen apps'
+      ],
+      impact: 'Improved safety, transparency, sovereignty, and operational efficiency.'
+    },
+    {
+      icon: '🌐',
+      title: 'Digital Sovereignty Network',
+      modules: [
+        'Nationwide secure hosting',
+        'Integrated AI dashboards'
+      ],
+      impact: 'Enhanced security, reduced foreign dependency, foundation for future digital services.'
+    }
+  ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.initializeScrollAnimations();
+  }
+
+  private initializeScrollAnimations(): void {
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      setTimeout(() => {
+        const elements = document.querySelectorAll('.service-card, .infrastructure-card, .project-card, .service-category');
+        elements.forEach(el => observer.observe(el));
+      }, 100);
+    }
+  }
+
+  getAnimationDelay(index: number, baseDelay: number): string {
+    return `${(index * 0.1) + baseDelay}s`;
+  }
+
+  trackByService(index: number, item: Service): string {
+    return item.title + index;
+  }
+
+  trackByProject(index: number, item: Project): string {
+    return item.title + index;
+  }
+
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
 }
