@@ -5,8 +5,8 @@ import { Services } from '../components/service/services';
 import { NotFound } from '../components/not-found/not-found';
 
 export const routes: Routes = [
-  { path: '', component: Home, title: 'Home' },
-  { path: 'about', component: About, title: 'About' },
-  { path: 'services', component: Services, title: 'Services' },
+  { path: '', component: Home, title: 'Home | Tekronyx  ' },
+  { path: 'about', component: About, title: 'About | Tekronyx' },
+  { path: 'services', component: Services, title: 'Services | Tekronyx}' },
   { path: '**', component: NotFound, title: 'Error 404 ' }
 ];

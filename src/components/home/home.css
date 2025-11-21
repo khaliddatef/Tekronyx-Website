@@ -106,11 +106,20 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/images/backgroundIamge.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Optional: for parallax effect */
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.5);
 }
 
 .hero-overlay {
@@ -1869,8 +1878,12 @@ body {
 .hero-title,
 .hero-description {
   color: var(--text-strong);
+  font-size: 80px;
 }
+.hero-title span{
+    padding: 0 10px;
 
+}
 .hero-description,
 .section-header p,
 .project-description,
