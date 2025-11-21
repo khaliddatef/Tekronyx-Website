@@ -1,61 +1,61 @@
 {
-  "hash": "5f7b68c1",
-  "configHash": "6a98e6c0",
-  "lockfileHash": "7c2dddca",
-  "browserHash": "6ee0a4cd",
+  "hash": "c36d7714",
+  "configHash": "fb79d1d8",
+  "lockfileHash": "e682f9fc",
+  "browserHash": "6d0715a0",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "26f8bf1a",
+      "fileHash": "ad29823d",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "28cf61f9",
+      "fileHash": "76fa100b",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "c06dba96",
+      "fileHash": "6afe80b0",
       "needsInterop": false
     },
     "@angular/platform-server/init": {
       "src": "../../../../../../node_modules/@angular/platform-server/fesm2022/init.mjs",
       "file": "@angular_platform-server_init.js",
-      "fileHash": "582b1807",
+      "fileHash": "249f9a5d",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "3b81e5aa",
+      "fileHash": "f3f2a52e",
       "needsInterop": false
     },
     "@angular/ssr": {
       "src": "../../../../../../node_modules/@angular/ssr/fesm2022/ssr.mjs",
       "file": "@angular_ssr.js",
-      "fileHash": "f8760233",
+      "fileHash": "4f6da4f6",
       "needsInterop": false
     },
     "@angular/ssr/node": {
       "src": "../../../../../../node_modules/@angular/ssr/fesm2022/node.mjs",
       "file": "@angular_ssr_node.js",
-      "fileHash": "970862a7",
+      "fileHash": "65974cdb",
       "needsInterop": false
     },
     "express": {
       "src": "../../../../../../node_modules/express/index.js",
       "file": "express.js",
-      "fileHash": "ae0c973c",
+      "fileHash": "533a90cd",
       "needsInterop": true
     },
     "zone.js/node": {
       "src": "../../../../../../node_modules/zone.js/fesm2015/zone-node.js",
       "file": "zone__js_node.js",
-      "fileHash": "9fc7b608",
+      "fileHash": "0b35af09",
       "needsInterop": true
     }
   },
@@ -63,8 +63,8 @@
     "xhr2-WBTWOK2V": {
       "file": "xhr2-WBTWOK2V.js"
     },
-    "chunk-FXLBDRLV": {
-      "file": "chunk-FXLBDRLV.js"
+    "chunk-BA3OWLED": {
+      "file": "chunk-BA3OWLED.js"
     },
     "chunk-XKFV7WSD": {
       "file": "chunk-XKFV7WSD.js"
