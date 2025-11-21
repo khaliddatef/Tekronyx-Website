@@ -398,7 +398,7 @@ body {
         /* Vision & Mission Section */
         .vision-mission-section {
             padding: 6rem 0;
-            background: #0a0a0a;
+            background: #ffffff;
             position: relative;
             overflow: hidden;
         }
@@ -410,8 +410,6 @@ body {
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(41, 98, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(255, 41, 117, 0.1) 0%, transparent 50%);
             z-index: 0;
         }
         
@@ -460,27 +458,26 @@ body {
         
         .vision-card,
         .mission-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
             padding: 3rem 2.5rem;
             border-radius: 20px;
             text-align: center;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             opacity: 0;
             transform: translateY(30px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
         }
         
         .vision-card {
             animation: fadeInUp 0.8s ease 0.4s forwards;
-            box-shadow: 0 10px 30px rgba(41, 98, 255, 0.15);
         }
         
         .mission-card {
             animation: fadeInUp 0.8s ease 0.6s forwards;
-            box-shadow: 0 10px 30px rgba(255, 41, 117, 0.15);
         }
         
         .vision-card::before,
@@ -491,14 +488,10 @@ body {
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #2962ff, #00c6ff);
+            background: linear-gradient(90deg, var(--accent), var(--accent-strong));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-        
-        .mission-card::before {
-            background: linear-gradient(90deg, #ff2975, #ff8a00);
+            transition: transform 0.4s ease;
         }
         
         .vision-card:hover::before,
@@ -508,13 +501,10 @@ body {
         
         .vision-card:hover,
         .mission-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 15px 40px rgba(41, 98, 255, 0.25);
-        }
-        
-        .mission-card:hover {
-            box-shadow: 0 15px 40px rgba(255, 41, 117, 0.25);
+            transform: translateY(-8px);
+            background: #ffffff;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+            border-color: rgba(0, 0, 0, 0.14);
         }
         
         .icon-wrapper {
@@ -522,26 +512,22 @@ body {
             margin-bottom: 1.5rem;
             display: inline-block;
             position: relative;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
+            color: var(--accent);
+            text-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
-        
+
         .vision-card .icon-wrapper {
-            background: linear-gradient(135deg, #2962ff, #00c6ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--accent);
         }
         
         .mission-card .icon-wrapper {
-            background: linear-gradient(135deg, #ff2975, #ff8a00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--accent-strong);
         }
         
         .vision-card:hover .icon-wrapper,
         .mission-card:hover .icon-wrapper {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.08) translateY(-4px);
         }
         
         .vision-card h3,
@@ -652,11 +638,8 @@ body {
    /* Pillars Section */
         /* Pillars Section */
 .pillars-section {
-    padding: 8rem 0;
-    background: 
-        radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-        linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+    padding: 3rem 0;
+    background: #ffffff;
     position: relative;
     overflow: hidden;
 }
@@ -678,13 +661,13 @@ body {
     font-size: 3.2rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #8b5cf6, #a855f7, #ec4899);
+    /* background: linear-gradient(135deg, var(--accent), var(--accent-strong)); */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     position: relative;
     display: inline-block;
-    text-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
 
 .section-header h2::after {
@@ -701,7 +684,7 @@ body {
 }
 
 .section-header p {
-    color: #c7d2fe;
+    color: var(--text-soft);
     font-size: 1.3rem;
     max-width: 600px;
     margin: 2.5rem auto 0;
@@ -716,17 +699,17 @@ body {
 }
 
 .pillar-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
     padding: 3.5rem 2.5rem;
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 12px 32px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .pillar-card::before {
@@ -758,12 +741,11 @@ body {
 }
 
 .pillar-card:hover {
-    transform: translateY(-12px);
-    border-color: rgba(139, 92, 246, 0.5);
+    transform: translateY(-10px);
+    border-color: rgba(0, 0, 0, 0.14);
     box-shadow: 
-        0 25px 50px rgba(139, 92, 246, 0.2),
-        0 15px 30px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 20px 48px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .pillar-icon {
@@ -771,11 +753,8 @@ body {
     margin-bottom: 2rem;
     display: inline-block;
     transition: all 0.5s ease;
-    filter: drop-shadow(0 5px 15px rgba(139, 92, 246, 0.5));
-    background: linear-gradient(135deg, #8b5cf6, #a855f7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.12));
+    color: var(--accent-strong);
     position: relative;
 }
 
@@ -787,7 +766,7 @@ body {
     transform: translateX(-50%);
     width: 40px;
     height: 4px;
-    background: linear-gradient(90deg, #8b5cf6, #a855f7);
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
     border-radius: 3px;
     transition: all 0.4s ease;
     box-shadow: 0 2px 8px rgba(139, 92, 246, 0.5);
@@ -806,7 +785,7 @@ body {
 .pillar-card h3 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
-    color: white;
+    color: var(--text-strong);
     font-weight: 600;
     position: relative;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -826,7 +805,7 @@ body {
 }
 
 .pillar-items li {
-    color: #e2e8f0;
+    color: var(--text-soft);
     padding: 1.2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
@@ -865,15 +844,15 @@ body {
 }
 
 .pillar-items li:hover {
-    color: white;
+    color: var(--text-strong);
     padding-left: 3.5rem;
     transform: translateX(8px);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
 }
 
 .pillar-items li:hover::before {
     transform: translateY(-50%) scale(1.2);
-    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .pillar-items li:hover::after {
@@ -1010,11 +989,8 @@ body {
 }
   /* /////////////////////////////////////////Projects Section */
 .projects-section {
-    padding: 8rem 0;
-    background: 
-        radial-gradient(ellipse at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-        #0a0a0a;
+    padding: 3rem 0;
+    background: #ffffff;
     position: relative;
     overflow: hidden;
 }
@@ -1036,7 +1012,7 @@ body {
     font-size: 3.2rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1057,7 +1033,7 @@ body {
 }
 
 .section-header p {
-    color: #c7d2fe;
+    color: var(--text-soft);
     font-size: 1.3rem;
     max-width: 600px;
     margin: 2.5rem auto 0;
@@ -1347,11 +1323,8 @@ body {
 }
 /* //////////////Advantages Section */
 .advantages-section {
-    padding: 8rem 0;
-    background: 
-        radial-gradient(ellipse at 20% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
-        #111111;
+    padding: 3rem 0;
+    background: #ffffff;
     position: relative;
     overflow: hidden;
 }
@@ -1365,16 +1338,16 @@ body {
 .advantage-card {
     text-align: center;
     padding: 3rem 1.5rem;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 12px 32px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .advantage-card::before {
@@ -1384,7 +1357,7 @@ body {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.6), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .advantage-card::after {
@@ -1407,54 +1380,46 @@ body {
 
 .advantage-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: rgba(0, 0, 0, 0.14);
     box-shadow: 
-        0 15px 35px rgba(99, 102, 241, 0.15),
-        0 10px 25px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 18px 42px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .advantage-icon {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     display: inline-block;
-    transition: all 0.4s ease;
-    filter: drop-shadow(0 4px 12px rgba(99, 102, 255, 0.4));
-    background: linear-gradient(135deg, #6366f1, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
+    color: var(--accent);
 }
 
 .advantage-card:hover .advantage-icon {
-    transform: scale(1.1);
-    filter: drop-shadow(0 6px 18px rgba(236, 72, 153, 0.5));
+    transform: scale(1.08) translateY(-4px);
 }
 
 .advantage-card h4 {
     font-size: 1.3rem;
     margin-bottom: 1.2rem;
-    color: white;
+    color: var(--text-strong);
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .advantage-card:hover h4 {
-    background: linear-gradient(135deg, #6366f1, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--accent-strong);
 }
 
 .advantage-card p {
-    color: #cbd5e1;
+    color: var(--text-soft);
     font-size: 0.95rem;
     line-height: 1.6;
     transition: all 0.3s ease;
 }
 
 .advantage-card:hover p {
-    color: #e2e8f0;
+    color: var(--text-strong);
 }
 
 /* Animated Background Elements */
@@ -1465,9 +1430,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -1535,10 +1497,7 @@ body {
 /* CTA Section */
 .cta-section {
     padding: 8rem 0;
-    background: 
-        radial-gradient(ellipse at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #f7f8fc 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1552,8 +1511,8 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 30% 20%, rgba(0, 180, 216, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(123, 47, 247, 0.06) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -1566,13 +1525,13 @@ body {
     font-size: 3.2rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #6366f1, #ec4899, #f59e0b);
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     position: relative;
     display: inline-block;
-    text-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease 0.2s forwards;
@@ -1593,7 +1552,7 @@ body {
 
 .cta-content p {
     font-size: 1.3rem;
-    color: #c7d2fe;
+    color: var(--text-soft);
     margin-bottom: 3rem;
     max-width: 600px;
     margin-left: auto;
@@ -1648,38 +1607,38 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: white;
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 
-        0 8px 25px rgba(99, 102, 241, 0.3),
-        0 4px 15px rgba(0, 0, 0, 0.2);
+        0 8px 25px rgba(0, 0, 0, 0.12),
+        0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 
-        0 15px 35px rgba(99, 102, 241, 0.4),
-        0 8px 20px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        0 15px 35px rgba(0, 0, 0, 0.18),
+        0 8px 20px rgba(0, 0, 0, 0.16);
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent));
 }
 
 .btn-secondary {
-    background: transparent;
-    color: #6366f1;
-    border: 2px solid #6366f1;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--text-strong);
+    border: 2px solid rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .btn-secondary:hover {
     transform: translateY(-3px);
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(0, 0, 0, 0.08);
     box-shadow: 
-        0 15px 35px rgba(99, 102, 241, 0.2),
-        0 8px 20px rgba(0, 0, 0, 0.2);
-    border-color: #8b5cf6;
-    color: #8b5cf6;
+        0 15px 35px rgba(0, 0, 0, 0.14),
+        0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.16);
+    color: var(--text-strong);
 }
 
 /* Floating animation for background elements */
@@ -1796,4 +1755,233 @@ body {
     .floating-element {
         display: none;
     }
+}
+
+/* White-first palette refresh */
+:host {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f4f6;
+  --card-surface: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --text-strong: #0c0c0c;
+  --text-soft: #3b3b3b;
+  --accent: #00b4d8;
+  --accent-strong: #7b2ff7;
+}
+
+.hero-section,
+.vision-mission-section,
+.pillars-section,
+.projects-section,
+.advantages-section,
+.cta-section {
+  background: white;
+  color: var(--text-strong);
+}
+
+.hero-section {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(0, 0, 0, 0.55), transparent 46%),
+    radial-gradient(circle at 82% 12%, rgba(0, 0, 0, 0.38), transparent 40%),
+    radial-gradient(circle at 60% 70%, rgba(0, 0, 0, 0.28), transparent 45%),
+    #0b0b0f;
+  color: #f5f5f5;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(150deg, rgba(6, 6, 6, 0.514) 0%, rgba(8, 8, 8, 0.526) 55%, rgba(10, 10, 10, 0.523) 100%),
+    radial-gradient(circle at 30% 30%, rgba(0, 180, 216, 0.12), transparent 50%),
+    radial-gradient(circle at 75% 65%, rgba(123, 47, 247, 0.12), transparent 48%);
+}
+
+.hero-title,
+.hero-description,
+.company-name {
+  color: #f5f5f5;
+}
+
+.hero-title {
+  background: linear-gradient(135deg, #f9fbff 0%, #dfe8ff 35%, #f9fbff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-description {
+  color: #e8eef5;
+}
+
+/* refined cards and hover for a clean professional feel */
+.vision-card,
+.mission-card,
+.pillar-card,
+.project-card,
+.advantage-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease, background 0.32s ease;
+}
+
+.vision-card:hover,
+.mission-card:hover,
+.pillar-card:hover,
+.project-card:hover,
+.advantage-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+
+.project-image::after {
+  background: linear-gradient(135deg, rgba(12, 12, 12, 0.16), rgba(31, 31, 31, 0.1));
+  border: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-card:hover .image-overlay {
+  opacity: 0.25;
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+.company-name,
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.company-name::after {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+}
+
+.hero-title,
+.hero-description {
+  color: var(--text-strong);
+}
+
+.hero-description,
+.section-header p,
+.project-description,
+.advantage-card p,
+.project-impact,
+.pillar-items li,
+.vision-card p,
+.mission-card p,
+.cta-content p {
+  color: var(--text-soft);
+}
+
+.section-header h2 {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header h2::after {
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+}
+.vision-card,
+.mission-card,
+.pillar-card,
+.project-card,
+.advantage-card {
+  background: var(--card-surface);
+  border-color: var(--card-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.vision-card::before,
+.mission-card::before,
+.pillar-card::before,
+.project-card::before,
+.advantage-card::before {
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.vision-card:hover,
+.mission-card:hover,
+.pillar-card:hover,
+.project-card:hover,
+.advantage-card:hover {
+  background: #f9f9fb;
+  border-color: rgba(0, 0, 0, 0.14);
+}
+.vision-card:hover p,
+.mission-card:hover p{
+color: black;
+}
+
+
+.project-impact {
+  border-left-color: var(--accent);
+  background: #f8f8f9;
+}
+
+.project-card:hover .project-impact {
+  border-left-color: var(--accent-strong);
+  color: var(--text-strong);
+  background: #f1f1f3;
+}
+
+.project-image::after {
+  background: linear-gradient(135deg, rgba(12, 12, 12, 0.25), rgba(31, 31, 31, 0.15));
+  border: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-card:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+.btn {
+  background: transparent;
+  color: var(--text-strong);
+  border: 1px solid var(--card-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-strong) 0%, var(--accent) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+.btn-secondary {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-strong);
+  border: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.35);
+  color: var(--text-strong);
+}
+
+.cta-content h2 {
+  background: linear-gradient(135deg, #0c0c0c 0%, #2a2a2a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
