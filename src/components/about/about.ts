@@ -1,38 +1,31 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   imports: [CommonModule],
   templateUrl: './about.html',
-  styleUrl: './about.css',
+  styleUrls: ['./about.css']
 })
 export class About {
-  protected readonly values = [
+  services = [
     {
-      title: 'Craft over everything',
-      copy: 'Precision and focus on the details translate into lovable products and resilient platforms.',
+      icon: 'fas fa-brain',
+      image: '🤖',
+      title: 'Intelligent AI Platforms',
+      description: 'Advanced artificial intelligence systems designed for national-scale operations and decision-making.'
     },
     {
-      title: 'Partner, not vendor',
-      copy: 'Tekronyx pods embed with your leaders, co-owning the roadmap and KPIs.',
+      icon: 'fas fa-chart-network',
+      image: '📊',
+      title: 'Real-time Analytics Systems',
+      description: 'Live decision support platforms for government and enterprise operations with instant insights.'
     },
     {
-      title: 'Measure the magic',
-      copy: 'Every launch is tied to measurable signals: faster releases, less toil, happier customers.',
-    },
-  ];
-
-  protected readonly milestones = [
-    { year: '2018', detail: 'Tekronyx launches as a distributed product studio.' },
-    { year: '2020', detail: 'Scaled automation practice serving fintech and mobility scale-ups.' },
-    { year: '2022', detail: 'Built first AI copilots powering large research organisations.' },
-    { year: '2024', detail: 'Global pods across MENA & Europe delivering 24/7 coverage.' },
-  ];
-
-  protected readonly leaders = [
-    { name: 'Nour Satti', role: 'Product Strategy', blurb: 'Guides venture-backed teams to high-leverage roadmaps.' },
-    { name: 'Karim Wahid', role: 'Engineering', blurb: 'Cloud-native architect obsessed with observability.' },
-    { name: 'Laila Mostafa', role: 'Design', blurb: 'Builds intuitive systems marrying data + storytelling.' },
+      icon: 'fas fa-shield-check',
+      image: '🛡️',
+      title: 'Secure Sovereign Infrastructure',
+      description: 'Data and network infrastructure ensuring national security and digital independence.'
+    }
   ];
 }
