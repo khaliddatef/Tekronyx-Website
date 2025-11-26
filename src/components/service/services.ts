@@ -108,29 +108,6 @@ export class Services implements OnInit {
     }
   ];
 
-  featuredProjects: Project[] = [
-    {
-      icon: '🛡️',
-      title: 'MOI AI-Powered Public Security Platform',
-      modules: [
-        'Predictive policing',
-        'Data archiving',
-        'Real-time dashboards',
-        'Citizen apps'
-      ],
-      impact: 'Improved safety, transparency, sovereignty, and operational efficiency.'
-    },
-    {
-      icon: '🌐',
-      title: 'Digital Sovereignty Network',
-      modules: [
-        'Nationwide secure hosting',
-        'Integrated AI dashboards'
-      ],
-      impact: 'Enhanced security, reduced foreign dependency, foundation for future digital services.'
-    }
-  ];
-
   constructor() { }
 
   ngOnInit(): void {
@@ -151,7 +128,8 @@ export class Services implements OnInit {
       });
 
       setTimeout(() => {
-        const elements = document.querySelectorAll('.service-card, .infrastructure-card, .project-card, .service-category');
+        // FIXED: Added .section-header to the observed elements
+        const elements = document.querySelectorAll('.section-header, .service-category, .service-card, .infrastructure-card');
         elements.forEach(el => observer.observe(el));
       }, 100);
     }
@@ -163,19 +141,5 @@ export class Services implements OnInit {
 
   trackByService(index: number, item: Service): string {
     return item.title + index;
-  }
-
-  trackByProject(index: number, item: Project): string {
-    return item.title + index;
-  }
-
-  scrollToSection(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
   }
 }
