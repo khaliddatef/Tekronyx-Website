@@ -1,11 +1,13 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { StrategicPartnersComponent } from '../strategic-partners/strategic-partners';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule,
+    StrategicPartnersComponent,  
+  ],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
@@ -40,8 +42,8 @@ export class Home implements AfterViewInit {
   // Key projects data
   projects = [
     {
-      title: 'MOI AI-Powered Public Security Platform',
-      description: 'Predictive policing, real-time dashboards, secure data archiving, citizen engagement apps',
+      title: 'AI-Powered Public Security Platform',
+      description: 'Predictive, real-time dashboards, secure data archiving, citizen engagement apps',
       impact: 'Faster safety operations, data sovereignty, nationwide optimization',
       image: './assets/images/futuristic-technology-concept.jpg'
     },
