@@ -32,7 +32,7 @@
   padding: 3rem 0;
   margin-bottom: 4rem;
   background: var(--bg-white);
-  border-radius: 20px;
+  border-radius: 0; /* Remove border-radius for large card */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -59,7 +59,7 @@
   gap: 1rem;
   padding: 2rem 1.5rem;
   background: var(--bg-light);
-  border-radius: 16px;
+  border-radius: 16px; /* Keep border-radius for smaller cards */
   transition: all 0.3s ease;
   border: 2px solid transparent;
   flex: 1;
@@ -130,7 +130,7 @@
   gap: 1rem;
   padding: 1.5rem;
   background: var(--bg-white);
-  border-radius: 12px;
+  border-radius: 0; /* Remove border-radius for large card */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border-left: 4px solid var(--light-blue);
   animation: fadeInUp 1s ease-out 0.9s both;
@@ -200,7 +200,7 @@
   position: relative;
   background: var(--bg-white);
   padding: 0;
-  border-radius: 20px;
+  border-radius: 0; /* Remove border-radius for large cards */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   overflow: hidden;
@@ -410,4 +410,23 @@
   .hero-image {
     max-width: 250px;
   }
+}
+/* Make service card icons black */
+.card-image {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--accent-purple) 100%);
+  font-size: 3rem;
+  padding: 2rem;
+  flex-shrink: 0;
+  filter: grayscale(1) brightness(0); /* Add this line to make icons black */
+}
+
+/* Alternative method if the above doesn't work */
+.card-image span {
+  filter: grayscale(1) brightness(0);
+  display: inline-block;
 }

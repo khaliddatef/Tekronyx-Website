@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 interface Service {
   icon: string;
@@ -9,20 +10,13 @@ interface Service {
   features?: string[];
 }
 
-interface Project {
-  icon: string;
-  title: string;
-  modules?: string[];
-  impact: string;
-}
-
 @Component({
   selector: 'app-services',
   imports: [CommonModule, RouterLink],
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
-export class Services implements OnInit {
+export class Services implements OnInit, AfterViewInit {
   
   particles: number[] = Array(50).fill(0);
   
@@ -51,7 +45,7 @@ export class Services implements OnInit {
     },
     {
       icon: '💬',
-      title: 'Citizen Engagement Platforms',
+      title: 'Engagement Platforms',
       description: 'Feedback, participation, surveys, and communication channels between citizens and government.',
       features: [
         'Multi-channel engagement',
@@ -108,38 +102,97 @@ export class Services implements OnInit {
     }
   ];
 
-  constructor() { }
+  // For future animations - safely handle SSR
+  isBrowser: boolean;
+  animationInProgress = false;
 
-  ngOnInit(): void {
-    this.initializeScrollAnimations();
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
-  private initializeScrollAnimations(): void {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
+  ngOnInit(): void {
+    // No DOM operations here - SSR safe
+  }
 
-      setTimeout(() => {
-        // FIXED: Added .section-header to the observed elements
-        const elements = document.querySelectorAll('.section-header, .service-category, .service-card, .infrastructure-card');
-        elements.forEach(el => observer.observe(el));
-      }, 100);
+  ngAfterViewInit(): void {
+    // Only run animations on client side
+    if (this.isBrowser) {
+      this.safeInitializeAnimations();
     }
   }
 
-  getAnimationDelay(index: number, baseDelay: number): string {
-    return `${(index * 0.1) + baseDelay}s`;
+  /**
+   * Safe animation initialization that only runs on browser
+   * This handles SSR gracefully
+   */
+  private safeInitializeAnimations(): void {
+    if (!this.isBrowser || this.animationInProgress) {
+      return;
+    }
+
+    this.animationInProgress = true;
+    
+    // Add a small delay to ensure DOM is ready
+    setTimeout(() => {
+      try {
+        // Since we're using CSS-only animations now, we don't need to add classes
+        // But we can add a visual cue that animations are ready
+        const serviceCategories = document.querySelectorAll('.service-category');
+        
+        // Add a small visual feedback for client-side rendering
+        serviceCategories.forEach((category, index) => {
+          setTimeout(() => {
+            category.classList.add('loaded');
+          }, index * 100);
+        });
+        
+      } catch (error) {
+        console.warn('Animation initialization failed:', error);
+        // Fallback: Ensure everything is visible
+        this.ensureVisibilityFallback();
+      }
+    }, 100);
   }
 
+  /**
+   * Fallback method to ensure visibility if animations fail
+   */
+  private ensureVisibilityFallback(): void {
+    if (!this.isBrowser) return;
+    
+    try {
+      // Add a class that forces visibility
+      const elements = document.querySelectorAll('.service-category, .service-card, .infrastructure-card');
+      elements.forEach(el => {
+        el.classList.add('visible');
+      });
+    } catch (error) {
+      console.warn('Fallback visibility failed:', error);
+    }
+  }
+
+  /**
+   * TrackBy function for ngFor optimization
+   */
   trackByService(index: number, item: Service): string {
-    return item.title + index;
+    return `${item.title}-${index}`;
+  }
+
+  /**
+   * Utility method for debugging - SSR safe
+   */
+  getServiceCounts(): { ai: number, infrastructure: number } {
+    return {
+      ai: this.aiApplications.length,
+      infrastructure: this.digitalInfrastructure.length
+    };
+  }
+
+  /**
+   * Check if component is running on server
+   * Useful for conditional rendering
+   */
+  isServer(): boolean {
+    return !this.isBrowser;
   }
 }

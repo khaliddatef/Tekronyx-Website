@@ -32,14 +32,15 @@
 
 <section class="services-section">
   <div class="container">
-    <!-- FIXED: Section header will now be immediately visible -->
-    <div class="section-header">
+
+    <!-- Section header - immediately visible -->
+    <div class="section-header visible">
       <h2>Our Services</h2>
       <p>Comprehensive AI-native solutions for modern government transformation</p>
     </div>
 
     <!-- AI-Native Applications -->
-    <div class="service-category" id="ai-applications">
+    <div class="service-category visible" id="ai-applications">
       <div class="category-header">
         <h3>AI-Native Applications</h3>
         <p>Intelligent solutions driving government digital transformation</p>
@@ -47,8 +48,7 @@
       
       <div class="services-grid">
         <div class="service-card" 
-             *ngFor="let service of aiApplications; let i = index; trackBy: trackByService"
-             [style.animation-delay]="getAnimationDelay(i, 0.1)">
+             *ngFor="let service of aiApplications; let i = index; trackBy: trackByService">
           <div class="service-icon">{{service.icon}}</div>
           <h4>{{service.title}}</h4>
           <p>{{service.description}}</p>
@@ -62,7 +62,7 @@
     </div>
 
     <!-- Digital Infrastructure -->
-    <div class="service-category" id="digital-infrastructure">
+    <div class="service-category visible" id="digital-infrastructure">
       <div class="category-header">
         <h3>Digital Infrastructure</h3>
         <p>Secure, sovereign foundation for national digital transformation</p>
@@ -70,8 +70,7 @@
       
       <div class="infrastructure-grid">
         <div class="infrastructure-card" 
-             *ngFor="let service of digitalInfrastructure; let i = index; trackBy: trackByService"
-             [style.animation-delay]="getAnimationDelay(i, 0.2)">
+             *ngFor="let service of digitalInfrastructure; let i = index; trackBy: trackByService">
           <div class="card-inner">
             <div class="card-icon">{{service.icon}}</div>
             <h4>{{service.title}}</h4>
